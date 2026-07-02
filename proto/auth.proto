@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "auth/pb";
+
+
+service AuthService {
+    rpc Login(LoginRequest) returns (LoginResponse);
+    rpc Refresh(RefreshRequest) returns (RefreshResponse);
+    rpc Access(AccessRequest) returns (AccessResponse);
+    rpc Revoke(RevokeRequest) returns (RevokeResponse);
+}
+
+message LoginRequest{
+    string email = 1;
+    string password = 2;
+}
+message LoginResponse{
+    string access_token = 1;
+    string refresh_token = 2;
+}
+
+message RefreshRequest{
+    string refresh_token = 1;
+}
+message RefreshResponse{
+    string access_token = 1;
+    string refresh_token = 2;
+}
+
+message AccessRequest {
+    string token = 1;
+}
+message AccessResponse {
+    int64 user_id = 1;
+    string expired_at = 2;
+}
+
+message All{
+    int64 user_id = 1;
+}
+message ByDevice{
+    int64 user_id = 1;
+    string device_id = 2;
+}
+message Concrete{
+    string token = 1;
+}
+message RevokeRequest{
+    oneof identifier {
+        All all = 1;
+        ByDevice by_device = 2;
+        Concrete concrete = 3;
+    }
+}
+message RevokeResponse{
+}
