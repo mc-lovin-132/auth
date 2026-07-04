@@ -591,6 +591,166 @@ func (*RevokeResponse) Descriptor() ([]byte, []int) {
 	return file_auth_proto_rawDescGZIP(), []int{10}
 }
 
+type HealthRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *HealthRequest) Reset() {
+	*x = HealthRequest{}
+	mi := &file_auth_proto_msgTypes[11]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *HealthRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*HealthRequest) ProtoMessage() {}
+
+func (x *HealthRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_auth_proto_msgTypes[11]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use HealthRequest.ProtoReflect.Descriptor instead.
+func (*HealthRequest) Descriptor() ([]byte, []int) {
+	return file_auth_proto_rawDescGZIP(), []int{11}
+}
+
+type HealthResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Status        string                 `protobuf:"bytes,1,opt,name=status,proto3" json:"status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *HealthResponse) Reset() {
+	*x = HealthResponse{}
+	mi := &file_auth_proto_msgTypes[12]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *HealthResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*HealthResponse) ProtoMessage() {}
+
+func (x *HealthResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_auth_proto_msgTypes[12]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use HealthResponse.ProtoReflect.Descriptor instead.
+func (*HealthResponse) Descriptor() ([]byte, []int) {
+	return file_auth_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *HealthResponse) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+type PingRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PingRequest) Reset() {
+	*x = PingRequest{}
+	mi := &file_auth_proto_msgTypes[13]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PingRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PingRequest) ProtoMessage() {}
+
+func (x *PingRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_auth_proto_msgTypes[13]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PingRequest.ProtoReflect.Descriptor instead.
+func (*PingRequest) Descriptor() ([]byte, []int) {
+	return file_auth_proto_rawDescGZIP(), []int{13}
+}
+
+type PingResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Message       string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PingResponse) Reset() {
+	*x = PingResponse{}
+	mi := &file_auth_proto_msgTypes[14]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PingResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PingResponse) ProtoMessage() {}
+
+func (x *PingResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_auth_proto_msgTypes[14]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PingResponse.ProtoReflect.Descriptor instead.
+func (*PingResponse) Descriptor() ([]byte, []int) {
+	return file_auth_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *PingResponse) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
 var File_auth_proto protoreflect.FileDescriptor
 
 const file_auth_proto_rawDesc = "" +
@@ -627,12 +787,21 @@ const file_auth_proto_rawDesc = "" +
 	"\bconcrete\x18\x03 \x01(\v2\x0e.auth.ConcreteH\x00R\bconcreteB\f\n" +
 	"\n" +
 	"identifier\"\x10\n" +
-	"\x0eRevokeResponse2\xe1\x01\n" +
+	"\x0eRevokeResponse\"\x0f\n" +
+	"\rHealthRequest\"(\n" +
+	"\x0eHealthResponse\x12\x16\n" +
+	"\x06status\x18\x01 \x01(\tR\x06status\"\r\n" +
+	"\vPingRequest\"(\n" +
+	"\fPingResponse\x12\x18\n" +
+	"\amessage\x18\x02 \x01(\tR\amessage2\xe1\x01\n" +
 	"\vAuthService\x120\n" +
 	"\x05Login\x12\x12.auth.LoginRequest\x1a\x13.auth.LoginResponse\x126\n" +
 	"\aRefresh\x12\x14.auth.RefreshRequest\x1a\x15.auth.RefreshResponse\x123\n" +
 	"\x06Access\x12\x13.auth.AccessRequest\x1a\x14.auth.AccessResponse\x123\n" +
-	"\x06Revoke\x12\x13.auth.RevokeRequest\x1a\x14.auth.RevokeResponseB\tZ\aauth/pbb\x06proto3"
+	"\x06Revoke\x12\x13.auth.RevokeRequest\x1a\x14.auth.RevokeResponse2s\n" +
+	"\rHealthService\x123\n" +
+	"\x06Health\x12\x13.auth.HealthRequest\x1a\x14.auth.HealthResponse\x12-\n" +
+	"\x04Ping\x12\x11.auth.PingRequest\x1a\x12.auth.PingResponseB\tZ\aauth/pbb\x06proto3"
 
 var (
 	file_auth_proto_rawDescOnce sync.Once
@@ -646,7 +815,7 @@ func file_auth_proto_rawDescGZIP() []byte {
 	return file_auth_proto_rawDescData
 }
 
-var file_auth_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_auth_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
 var file_auth_proto_goTypes = []any{
 	(*LoginRequest)(nil),    // 0: auth.LoginRequest
 	(*LoginResponse)(nil),   // 1: auth.LoginResponse
@@ -659,6 +828,10 @@ var file_auth_proto_goTypes = []any{
 	(*Concrete)(nil),        // 8: auth.Concrete
 	(*RevokeRequest)(nil),   // 9: auth.RevokeRequest
 	(*RevokeResponse)(nil),  // 10: auth.RevokeResponse
+	(*HealthRequest)(nil),   // 11: auth.HealthRequest
+	(*HealthResponse)(nil),  // 12: auth.HealthResponse
+	(*PingRequest)(nil),     // 13: auth.PingRequest
+	(*PingResponse)(nil),    // 14: auth.PingResponse
 }
 var file_auth_proto_depIdxs = []int32{
 	6,  // 0: auth.RevokeRequest.all:type_name -> auth.All
@@ -668,12 +841,16 @@ var file_auth_proto_depIdxs = []int32{
 	2,  // 4: auth.AuthService.Refresh:input_type -> auth.RefreshRequest
 	4,  // 5: auth.AuthService.Access:input_type -> auth.AccessRequest
 	9,  // 6: auth.AuthService.Revoke:input_type -> auth.RevokeRequest
-	1,  // 7: auth.AuthService.Login:output_type -> auth.LoginResponse
-	3,  // 8: auth.AuthService.Refresh:output_type -> auth.RefreshResponse
-	5,  // 9: auth.AuthService.Access:output_type -> auth.AccessResponse
-	10, // 10: auth.AuthService.Revoke:output_type -> auth.RevokeResponse
-	7,  // [7:11] is the sub-list for method output_type
-	3,  // [3:7] is the sub-list for method input_type
+	11, // 7: auth.HealthService.Health:input_type -> auth.HealthRequest
+	13, // 8: auth.HealthService.Ping:input_type -> auth.PingRequest
+	1,  // 9: auth.AuthService.Login:output_type -> auth.LoginResponse
+	3,  // 10: auth.AuthService.Refresh:output_type -> auth.RefreshResponse
+	5,  // 11: auth.AuthService.Access:output_type -> auth.AccessResponse
+	10, // 12: auth.AuthService.Revoke:output_type -> auth.RevokeResponse
+	12, // 13: auth.HealthService.Health:output_type -> auth.HealthResponse
+	14, // 14: auth.HealthService.Ping:output_type -> auth.PingResponse
+	9,  // [9:15] is the sub-list for method output_type
+	3,  // [3:9] is the sub-list for method input_type
 	3,  // [3:3] is the sub-list for extension type_name
 	3,  // [3:3] is the sub-list for extension extendee
 	0,  // [0:3] is the sub-list for field type_name
@@ -695,9 +872,9 @@ func file_auth_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_auth_proto_rawDesc), len(file_auth_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   11,
+			NumMessages:   15,
 			NumExtensions: 0,
-			NumServices:   1,
+			NumServices:   2,
 		},
 		GoTypes:           file_auth_proto_goTypes,
 		DependencyIndexes: file_auth_proto_depIdxs,

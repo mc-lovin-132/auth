@@ -56,3 +56,19 @@ message RevokeRequest{
 }
 message RevokeResponse{
 }
+
+
+service HealthService{
+    rpc Health(HealthRequest)returns (HealthResponse);
+    rpc Ping(PingRequest)returns (PingResponse);
+}
+
+message HealthRequest{}
+message HealthResponse{
+    string status = 1;
+}
+
+message PingRequest{}
+message PingResponse{
+    string message = 2;
+}
